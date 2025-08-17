@@ -31,7 +31,7 @@ public class myFrame extends JFrame {
     }
 
    
-    public void loadFile(File file) {
+    public void loadFile(File file) { 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             ArrayList<Double> values = new ArrayList<>();
             String line;
@@ -82,11 +82,11 @@ public class myFrame extends JFrame {
                 cell.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2));
 
                 if (gasPercent == 0) {
-                    cell.setBackground(new Color(255, 99, 71)); // แดง
+                    cell.setBackground(new Color(255, 99, 71)); // R
                 } else if (gasPercent < 50) {
-                    cell.setBackground(new Color(255, 255, 102)); // เหลือง
+                    cell.setBackground(new Color(255, 255, 102)); // Y
                 } else {
-                    cell.setBackground(new Color(144, 238, 144)); // เขียว
+                    cell.setBackground(new Color(144, 238, 144)); // G
                 }
 
                 cell.setToolTipText(

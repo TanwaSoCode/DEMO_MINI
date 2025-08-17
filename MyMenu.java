@@ -15,35 +15,46 @@ import java.awt.*;
         setUndecorated(false); 
 
         
-        buttonStart = new JButton("Start");
-        buttonExit = new JButton("Exit");
-
-        
         panelCenter = new JPanel(null);
         panelCenter.setBackground(new Color(205, 180, 219));
 
-        panelNorth = new JPanel();
-        panelNorth.setPreferredSize(new Dimension(150, 150));
-        panelNorth.setBackground(new Color(255, 200, 221));
+            panelNorth = new JPanel();
+            panelNorth.setPreferredSize(new Dimension(150, 150))    ;
+            panelNorth.setBackground(new Color(255, 200, 221));
 
-        label = new JLabel("Gas");
-        label.setFont(new Font("Tahoma", Font.PLAIN, 100));
-        panelNorth.add(label);
+                label = new JLabel("Gas");
+                label.setFont(new Font("Tahoma", Font.PLAIN, 100));
+                panelNorth.add(label);
 
-       
-        int buttonWidth = 250;
-        int buttonHeight = 80;
-        int centerX = (1200 - buttonWidth) / 2; 
+                    panelCenter = new JPanel();
+                    panelCenter.setBackground(new Color(205, 180, 219));
+                    panelCenter.setLayout(new BoxLayout(panelCenter, BoxLayout.Y_AXIS));
 
-        buttonStart.setBounds(centerX, 150, buttonWidth, buttonHeight);
-        buttonExit.setBounds(centerX, 300, buttonWidth, buttonHeight);
+                    panelCenter.add(Box.createVerticalGlue());
 
-        panelCenter.add(buttonStart);
-        panelCenter.add(buttonExit);
+                        buttonStart = new JButton("Start");
+                        buttonStart.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        buttonStart.setPreferredSize(new Dimension(400, 120));
+                        buttonStart.setMaximumSize(new Dimension(400, 120));
+                        panelCenter.add(buttonStart);
 
-    
+                            panelCenter.add(Box.createVerticalStrut(30));
+
+                            buttonExit = new JButton("Exit");
+                            buttonExit.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            buttonExit.setPreferredSize(new Dimension(400, 120));
+                            buttonExit.setMaximumSize(new Dimension(400, 120));
+                            panelCenter.add(buttonExit);
+                    
+                                panelCenter.add(Box.createVerticalGlue());
+
+                                buttonStart.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                buttonExit.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
         add(panelNorth, BorderLayout.NORTH);
         add(panelCenter, BorderLayout.CENTER);
+
 
       
         buttonStart.addActionListener(e -> {
