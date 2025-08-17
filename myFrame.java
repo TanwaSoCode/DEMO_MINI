@@ -89,7 +89,10 @@ public class myFrame extends JFrame {
                     cell.setBackground(new Color(144, 238, 144)); // เขียว
                 }
 
-                cell.setToolTipText(String.format("Depth: %.1f m, Gas: %.1f%%", base, gasPercent));
+                cell.setToolTipText(
+                        String.format("Depth: %.1f m, Gas: %.1f%%, Volume: %.0f m³", base, gasPercent, cellVolume)
+                );
+                
                 gridPanel.add(cell);
             }
         }
